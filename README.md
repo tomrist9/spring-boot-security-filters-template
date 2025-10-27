@@ -33,6 +33,9 @@ It also includes **method-level authorization** using annotations like `@PreAuth
 
 ##  Project Architecture
 
+```bash
+spring-boot-security-filters-template
+
 ├── src
 │ ├── main
 │ │ ├── java/com/example/securityfilters
@@ -45,3 +48,4 @@ It also includes **method-level authorization** using annotations like `@PreAuth
 │ │ └── application.yml
 └── pom.xml
 
+'''

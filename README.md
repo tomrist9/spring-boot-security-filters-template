@@ -48,4 +48,46 @@ spring-boot-security-filters-template
 │ │ └── application.yml
 └── pom.xml
 
-'''
+
+---
+
+## 🧠 Core Concepts Covered
+
+| Concept | Description |
+|----------|--------------|
+| **Filter Chain** | Ordered chain of filters intercepting HTTP requests before controllers. |
+| **addFilterBefore()** | Adds a custom filter before a specific Spring Security filter (e.g., `UsernamePasswordAuthenticationFilter`). |
+| **addFilterAfter()** | Adds a custom filter after a specific filter. |
+| **addFilterAt()** | Replaces a filter at a specific position. |
+| **OncePerRequestFilter** | Ensures the filter executes only once per request. |
+| **Method-Level Security** | Uses annotations to restrict access to service-level methods. |
+
+---
+
+## ⚙️ Technologies Used
+
+- **Java 17**
+- **Spring Boot 3.3+**
+- **Spring Security 6**
+- **Lombok**
+- **Gradle**
+- **Postman** for API testing
+
+---
+
+## 🧰 Example Endpoints
+
+| Endpoint | Method | Access | Description |
+|-----------|---------|--------|--------------|
+| `/api/public` | GET | Public | Accessible by anyone |
+| `/api/user` | GET | USER | Requires authenticated user |
+| `/api/admin` | GET | ADMIN | Restricted to admin role |
+
+Example of method-level security in a service class:
+
+```java
+@PreAuthorize("hasRole('ADMIN')")
+public String getAdminData() {
+    return "Admin-only secure data";
+}
+

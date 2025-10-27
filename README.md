@@ -48,6 +48,7 @@ spring-boot-security-filters-template
 │ │ └── application.yml
 └── pom.xml
 
+```
 
 ---
 
